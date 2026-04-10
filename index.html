@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Léopards Unis - Soutien officiel RDC</title>
+   
+    <!-- Polices et icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Notre CSS unique et propre -->
+    <link rel="stylesheet" href="style.css.css">
+</head>
+<body>
+
+<!-- Bouton admin direct -->
+<div style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
+    <button id="directAdminBtn" style="background: #1a1a2e; color: #f7d117; border: 2px solid #f7d117; padding: 12px 20px; border-radius: 50px; cursor: pointer; font-weight: bold;">
+        <i class="fas fa-shield-alt"></i> ADMIN
+    </button>
+</div>
+
+<script>
+    document.getElementById('directAdminBtn')?.addEventListener('click', function() {
+        const pwd = prompt("Mot de passe admin :");
+        if (pwd === "Leopards2025") {
+            document.getElementById('adminPanel').classList.add('show');
+        } else if (pwd) {
+            alert("Mot de passe incorrect");
+        }
+    });
+</script>
+<script src="script.js.js"></script>
+
+
+
+
+    <!-- Bouton admin (accessible en bas à gauche) -->
+    <div class="admin-access">
+        <button class="admin-access-btn" id="openAdminPanel">
+            <i class="fas fa-shield-alt"></i> Admin
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- ========== EN-TÊTE ========== -->
+        <header>
+            <h1>🇨🇩 LÉOPARDS UNIS 🇨🇩</h1>
+            <div class="slogan">1000 FC ou 500 FC, tous ensemble derrière nos Léopards !</div>
+           
+            <!-- Boutons de soutien rapide dans l'en-tête -->
+            <div class="quick-buttons">
+                <button class="btn btn-primary" onclick="payerShwary(3000)">💰 Je soutiens à 1000 FC</button>
+                <button class="btn btn-primary" onclick="payerShwary(5000)">💰 Je soutiens à 500 FC</button>
+            </div>
+        </header>
+
+        <!-- ========== BANNIÈRE HERO ========== -->
+        <div class="hero">
+            <img src="images/fans.png" alt="Supporters en liesse" loading="lazy">
+            <div class="hero-overlay">
+                <h2>#AllezRDC 🔥 #NosLéopards</h2>
+            </div>
+        </div>
+
+        <!-- ========== GALERIE DES JOUEURS ========== -->
+        <div class="gallery">
+            <h3>⭐ NOS GUERRIERS ⭐</h3>
+            <div class="grid">
+                <div class="card"><img src="images/mbemba.jpg" alt="Mbemba" loading="lazy"><p>🇨🇩 <strong>Chancel Mbemba</strong><br>Capitaine héroïque</p></div>
+                <div class="card"><img src="images/cedrick.png" alt="Bakambu" loading="lazy"><p>⚡ <strong>Cédric Bakambu</strong><br>La griffe du léopard</p></div>
+                <div class="card"><img src="images/kakuta.jpg" alt="Kakuta" loading="lazy"><p>✨ <strong>Gaël Kakuta</strong><br>Magie et détermination</p></div>
+                <div class="card"><img src="images/desabre.png" alt="Sélectionneur" loading="lazy"><p>💚 <strong>Sélectionneur Congolais</strong><br>"Nous allons tout donner sur le terrain"</p></div>
+            </div>
+        </div>
+
+        <!-- ========== OFFRES DE SOUTIEN ========== -->
+        <div class="support">
+            <h3>💪 SOUTENEZ & RECEVEZ VOTRE SOUVENIR</h3>
+            <div class="pack-container">
+                <div class="pack">
+                    <div class="price">1000 FC</div>
+                    <ul>
+                        <li><i class="fas fa-image"></i> 5 photos HD</li>
+                        <li><i class="fas fa-mobile-alt"></i> Fond écran smartphone</li>
+                        <li><i class="fas fa-receipt"></i> Reçu numérique</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="payerShwary(3000)">Je soutiens à 1000 FC</button>
+                </div>
+                <div class="pack">
+                    <div class="price">500 FC</div>
+                    <ul>
+                        <li><i class="fas fa-images"></i> 10 photos HD</li>
+                        <li><i class="fas fa-laptop"></i> Fonds PC + Mobile</li>
+                        <li><i class="fas fa-certificate"></i> Certificat nominatif</li>
+                        <li><i class="fas fa-video"></i> Vidéo remerciement</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="payerShwary(5000)">Je soutiens à 500 FC</button>
+                </div>
+            </div>
+
+            <!-- Compteur -->
+            <div class="counter-box">
+                <div><i class="fas fa-fire" style="color:#f7d117;"></i> DÉJÀ SOUTIENS</div>
+                <div class="counter-number" id="compteur">0</div>
+                <div id="totalFc" style="font-weight: bold;">Total collecté : 0 FC</div>
+            </div>
+        </div>
+
+        <!-- ========== ORGANISATEURS & TÉMOIGNAGES ========== -->
+        <div class="gallery">
+            <h3>📸 ORGANISATEURS & SOUTIENS</h3>
+           
+            <h4>Herman Amisi</h4>
+            <div class="grid">
+                <div class="card"><img src="images/herman.jpg" alt="Herman" loading="lazy"><p>🌍 KINSHASA : "500 FC ndege ya champions!"</p></div>
+            </div>
+           
+            <h4>Ocean Tambwe</h4>
+            <div class="grid">
+                <div class="card"><img src="images/ocean.jpg" alt="Ocean" loading="lazy"><p>⚡ KINSHASA : "Fier de mon pack 500 FC ! LEOPARDS YA TRES! TRES! BON QUALITE"</p></div>
+            </div>
+           
+            <div class="grid">
+                <div class="card"><img src="images/entete.jpg" alt="Groupe Lubumbashi" loading="lazy"><p>Groupe de Lubumbashi : "Fier de mon pack 500 FC !"</p></div>
+                <div class="card"><img src="images/kolwezi.jpg" alt="Groupe Kolwezi" loading="lazy"><p>Groupe de Kolwezi – Tous unis derrière l'équipe</p></div>
+            </div>
+        </div>
+
+        <!-- ========== MENU AIDE & PARTAGE ========== -->
+        <div class="menu-container">
+            <button class="menu-btn" id="menuBtn">
+                <i class="fas fa-headset"></i> Aide & Partage <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="menu-dropdown" id="menuDropdown">
+                <a href="https://wa.me/243972105724?text=Bonjour%2C%20j%27ai%20besoin%20d%27aide" target="_blank" class="menu-item">
+                    <i class="fab fa-whatsapp"></i> Support technique
+                </a>
+                <a href="mailto:support@leopardsunis.cd" class="menu-item">
+                    <i class="fas fa-envelope"></i> Nous écrire
+                </a>
+                <div class="menu-divider"></div>
+                <a href="#" id="shareWhatsAppMenu" class="menu-item"><i class="fab fa-whatsapp"></i> Partager WhatsApp</a>
+                <a href="#" id="shareFacebookMenu" class="menu-item"><i class="fab fa-facebook-f"></i> Partager Facebook</a>
+                <a href="#" id="shareTwitterMenu" class="menu-item"><i class="fab fa-twitter"></i> Partager Twitter</a>
+                <a href="#" id="shareNativeMenu" class="menu-item"><i class="fas fa-share-alt"></i> Partager via...</a>
+            </div>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <footer>
+            <p>© 2026 Léopards Unis - Soutien officiel des supporters congolais</p>
+            <div class="share-buttons-footer">
+                <span>📢 Partager ce site :</span>
+                <a href="#" id="shareWhatsApp" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" id="shareFacebook" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" id="shareTwitter" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" id="shareNative" class="share-btn native"><i class="fas fa-share-alt"></i></a>
+            </div>
+            <p>📧 <a href="mailto:contact@rkas3196@gmail.com">contact@rkas3196@gmail.com</a> | 📞 <a href="tel:+243972105724">+243 972 105 724</a></p>
+            <p>Site officiel créé pour soutenir les Léopards de la RDC</p>
+        </footer>
+    </div>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/243972105724?text=Support%20L%C3%A9opards" class="support-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Modal de paiement -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal()">&times;</span>
+            <h3><i class="fas fa-mobile-alt"></i> Paiement Mobile Money</h3>
+            <p id="modalMontant"></p>
+            <input type="tel" id="phoneNumber" placeholder="+243 97X XXX XXX">
+            <br><br>
+            <button id="confirmPayment" class="btn btn-primary">Confirmer le paiement</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script src="script.js"></script>
+
+!-- ========== ESPACE ADMINISTRATION ========== -->
+<div id="adminPanel" class="admin-panel">
+    <div class="admin-container">
+        <div class="admin-header">
+            <h2 class="admin-title"><i class="fas fa-shield-alt"></i> Administration - Léopards Unis</h2>
+            <button class="admin-close" id="closeAdminPanel"><i class="fas fa-times"></i> Fermer</button>
+        </div>
+       
+        <!-- Menu des onglets SIMPLE -->
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
+            <button onclick="afficherOngletAdmin('dashboard')" style="background: #ce1126; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer;">📊 Tableau de bord</button>
+            <button onclick="afficherOngletAdmin('stats')" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer;">👥 Supporters</button>
+            <button onclick="afficherOngletAdmin('packs')" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer;">🎁 Packs</button>
+            <button onclick="afficherOngletAdmin('photos')" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer;">🖼️ Photos</button>
+            <button onclick="afficherOngletAdmin('texts')" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer;">📝 Textes</button>
+            <button onclick="afficherOngletAdmin('links')" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer;">🔗 Liens</button>
+            <button onclick="afficherOngletAdmin('export')" style="background: #333; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer;">📊 Export</button>
+        </div>
+       
+        <!-- Onglet Tableau de bord -->
+        <div id="adminDashboard" class="admin-onglet" style="display: block;">
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card"><i class="fas fa-users"></i><h3 id="statSupportersAdmin">0</h3><p>Supporters engagés</p></div>
+                <div class="admin-stat-card"><i class="fas fa-money-bill-wave"></i><h3 id="statCollecteAdmin">0 FC</h3><p>Collecte totale</p></div>
+                <div class="admin-stat-card"><i class="fas fa-bullseye"></i><h3 id="statObjectifAdmin">0%</h3><p>Objectif atteint</p></div>
+            </div>
+        </div>
+       
+        <!-- Onglet Supporters -->
+        <div id="adminStats" class="admin-onglet" style="display: none;">
+            <h3 style="color: white;">👥 Modifier les statistiques</h3>
+            <div style="margin-bottom: 15px;">
+                <label style="color: #f7d117;">Nombre de supporters :</label>
+                <input type="number" id="adminSupporters" style="width: 100%; padding: 10px; border-radius: 10px; margin-top: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="color: #f7d117;">Total collecté (FC) :</label>
+                <input type="number" id="adminCollecte" style="width: 100%; padding: 10px; border-radius: 10px; margin-top: 5px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="color: #f7d117;">Objectif (FC) :</label>
+                <input type="number" id="adminObjectif" style="width: 100%; padding: 10px; border-radius: 10px; margin-top: 5px;">
+            </div>
+            <button onclick="sauvegarderStatsAdmin()" style="background: #ce1126; color: white; border: none; padding: 12px 25px; border-radius: 30px; cursor: pointer;">✅ Sauvegarder</button>
+        </div>
+       
+        <!-- Onglet Packs -->
+        <div id="adminPacks" class="admin-onglet" style="display: none;">
+            <h3 style="color: white;">🎁 Modifier les packs</h3>
+            <div id="packsListAdmin"></div>
+        </div>
+       
+        <!-- Onglet Photos -->
+        <div id="adminPhotos" class="admin-onglet" style="display: none;">
+            <h3 style="color: white;">🖼️ Photos</h3>
+            <div id="photosListAdmin"></div>
+        </div>
+       
+        <!-- Onglet Textes -->
+        <div id="adminTexts" class="admin-onglet" style="display: none;">
+            <h3 style="color: white;">📝 Textes</h3>
+            <div style="margin-bottom: 15px;"><label style="color: #f7d117;">Titre :</label><input type="text" id="textTitleAdmin" style="width: 100%; padding: 10px;"></div>
+            <div style="margin-bottom: 15px;"><label style="color: #f7d117;">Slogan :</label><input type="text" id="textSloganAdmin" style="width: 100%; padding: 10px;"></div>
+            <button onclick="sauvegarderTextesAdmin()" style="background: #ce1126; color: white; border: none; padding: 12px 25px; border-radius: 30px;">💾 Sauvegarder</button>
+        </div>
+       
+        <!-- Onglet Liens -->
+        <div id="adminLinks" class="admin-onglet" style="display: none;">
+            <h3 style="color: white;">🔗 Liens</h3>
+            <div style="margin-bottom: 15px;"><label style="color: #f7d117;">WhatsApp :</label><input type="text" id="linkWhatsAppAdmin" style="width: 100%; padding: 10px;"></div>
+            <div style="margin-bottom: 15px;"><label style="color: #f7d117;">Email :</label><input type="text" id="linkEmailAdmin" style="width: 100%; padding: 10px;"></div>
+            <button onclick="sauvegarderLiensAdmin()" style="background: #ce1126; color: white; border: none; padding: 12px 25px; border-radius: 30px;">💾 Sauvegarder</button>
+        </div>
+       
+        <!-- Onglet Export -->
+        <div id="adminExport" class="admin-onglet" style="display: none;">
+            <h3 style="color: white;">📊 Export</h3>
+            <button onclick="exporterDonsCSV()" style="background: #28a745; color: white; border: none; padding: 12px 25px; border-radius: 30px; margin-right: 10px;">📥 Exporter les dons</button>
+            <button onclick="exporterStatsCSV()" style="background: #ffc107; color: black; border: none; padding: 12px 25px; border-radius: 30px;">📥 Exporter les stats</button>
+        </div>
+    </div>
+</div> 
+
+
+</body>
+</html>
